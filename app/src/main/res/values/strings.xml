@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Moroccan Survival Guide</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_word_list">WordListActivity</string>
+    <string name="title_activity_phrase_details">PhraseDetailsActivity</string>
+    <string name="title_activity_translation_page">TranslationPage</string>
+</resources>
