@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import jonathonvega.com.moroccansurvivalguide.R;
 
-public class TranslationPage extends FragmentActivity {
+public class TranslationPage extends Fragment {
 
 
     @Override
@@ -22,7 +22,7 @@ public class TranslationPage extends FragmentActivity {
 
 
 
-    /*@Nullable
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -31,5 +31,5 @@ public class TranslationPage extends FragmentActivity {
         //tv.setText
 
         return v;
-    }*/
+    }
 }
