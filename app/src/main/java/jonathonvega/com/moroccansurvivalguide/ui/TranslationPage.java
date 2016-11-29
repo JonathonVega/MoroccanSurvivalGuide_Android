@@ -32,8 +32,6 @@ public class TranslationPage extends Fragment {
         super.onCreate(savedInstanceState);
         mEnglishWord = getArguments().getString("englishWord");
         mArabicWord = getArguments().getString("arabicWord");
-
-        Log.d("kdklfj", mEnglishWord);
     }
 
     @Override
