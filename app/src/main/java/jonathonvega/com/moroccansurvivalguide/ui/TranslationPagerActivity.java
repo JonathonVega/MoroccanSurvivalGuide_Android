@@ -1,13 +1,18 @@
 package jonathonvega.com.moroccansurvivalguide.ui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
+import jonathonvega.com.moroccansurvivalguide.R;
 import jonathonvega.com.moroccansurvivalguide.model.MSG_Phrases;
 import jonathonvega.com.moroccansurvivalguide.model.Section;
 
@@ -17,17 +22,24 @@ import jonathonvega.com.moroccansurvivalguide.model.Section;
 
 public class TranslationPagerActivity extends FragmentActivity {
 
-    private ViewPager mViewPager;
     private String[][] mSectionWords;
     private String mSection;
+
+    FragmentPagerAdapter adapterViewPager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewPager = new ViewPager(this);
-        setContentView(mViewPager);
+        setContentView(R.layout.activity_translation_page);
+        getIntents();
+        ViewPager pager = (ViewPager) findViewById(R.id.Pager);
+        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(adapterViewPager);
 
-        /*FragmentManager fm = getSupportFragmentManager();
+
+        /*ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        FragmentManager fm = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fm) {
             @Override
             public Fragment getItem(int position) {
@@ -38,28 +50,51 @@ public class TranslationPagerActivity extends FragmentActivity {
     }
 
 
-
-
-
-
     private void getIntents() {
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
         if(bd != null) {
             String currentSection = (String) bd.get("currentSection");
             mSection = currentSection;
+            System.out.println(mSection);
         }
 
         MSG_Phrases phrases = new MSG_Phrases();
         Section[] sections = phrases.getPhraseList();
-        for(int i = 0; i < 11; i++) {
+        for(int i = 0; i <= 11; i++) {
+
+            // Check what is coming out
+            System.out.println(sections[i].getSection());
+
             if(sections[i].getSection().equals(mSection)) {
                 mSectionWords = sections[i].getWords();
+                break;
             }
         }
     }
 
 
+    private class MyPagerAdapter extends FragmentPagerAdapter {
+
+        public MyPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager);
+        }
+
+        @Override
+        public int getCount() {
+            return mSectionWords.length;
+        }
+
+        @Override
+        public Fragment getItem(int pos) {
+            if(pos < getCount()){
+                return TranslationPage.newInstance(mSectionWords[pos][0], mSectionWords[pos][1]);
+            } else {
+                return null;
+            }
+        }
+
+    }
 
 
 

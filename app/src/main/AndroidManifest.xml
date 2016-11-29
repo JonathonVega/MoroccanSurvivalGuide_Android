@@ -22,6 +22,9 @@
         <activity
             android:name=".ui.TranslationPage"
             android:label="@string/title_activity_translation_page"></activity>
+        <activity
+            android:name=".ui.TranslationPagerActivity"
+            android:label="TranslationPager"></activity>
     </application>
 
 </manifest>
