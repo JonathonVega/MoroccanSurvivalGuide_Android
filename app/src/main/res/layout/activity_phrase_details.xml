@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_translation_page"
     android:layout_width="match_parent"
@@ -38,5 +39,16 @@
             android:layout_marginBottom="85dp"
             android:textColor="#A7A1A4"
             android:textSize="25sp" />
+
+        <ImageButton
+
+            android:id="@+id/imageButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/abc_btn_borderless_material"
+            android:src="@drawable/playstoreicon" />
     </FrameLayout>
 </RelativeLayout>
