@@ -24,6 +24,7 @@ public class TranslationPagerActivity extends FragmentActivity {
 
     private String[][] mSectionWords;
     private String mSection;
+    private int mCurrentWord;
 
     FragmentPagerAdapter adapterViewPager;
 
@@ -38,6 +39,8 @@ public class TranslationPagerActivity extends FragmentActivity {
 
         getActionBar().setDisplayShowTitleEnabled(false);
         getActionBar().setDisplayShowHomeEnabled(false);
+
+        pager.setCurrentItem(mCurrentWord);
 
     }
 
@@ -63,6 +66,11 @@ public class TranslationPagerActivity extends FragmentActivity {
                 break;
             }
         }
+
+        int currentWord = bd.getInt("currentWord");
+        mCurrentWord = currentWord;
+        System.out.println(mCurrentWord);
+
     }
 
 
