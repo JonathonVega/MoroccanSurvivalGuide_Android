@@ -35,9 +35,6 @@ public class WordListActivity extends ListActivity {
             mCurrentSection = currentSection;
         }
 
-
-
-
         setTitle(mCurrentSection);
         getActionBar().setDisplayShowHomeEnabled(false);
 

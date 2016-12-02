@@ -38,9 +38,6 @@ public class MainActivity extends ListActivity {
                 android.R.layout.simple_list_item_1,
                 MSG_Sections);
         setListAdapter(adapter);
-
-
-
     }
 
     @Override
@@ -56,5 +53,4 @@ public class MainActivity extends ListActivity {
         intent.putExtra("curSection", sectionClickedFromList);
         startActivity(intent);
     }
-
 }

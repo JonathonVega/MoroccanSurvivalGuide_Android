@@ -62,7 +62,6 @@ public class TranslationPage extends Fragment {
                 System.out.println(word);
                 int soundId = getResources().getIdentifier(word, "raw", getActivity().getPackageName());
 
-
                 stopPlaying();
                 player = MediaPlayer.create(getActivity(), soundId);
                 //player.start();
@@ -71,7 +70,6 @@ public class TranslationPage extends Fragment {
                     public void onCompletion(MediaPlayer mp) {
                         stopPlaying();
                     }
-
                 });
                 player.start();
             }
@@ -104,5 +102,4 @@ public class TranslationPage extends Fragment {
         System.out.println(formattedWord + "2");
         return formattedWord;
     }
-
 }

@@ -38,10 +38,7 @@ public class TranslationPagerActivity extends FragmentActivity {
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapterViewPager);
         pager.setCurrentItem(mCurrentWord);
-
-
     }
-
 
     private void getIntents() {
         Intent intent = getIntent();
@@ -68,7 +65,6 @@ public class TranslationPagerActivity extends FragmentActivity {
         int currentWord = bd.getInt("currentWord");
         mCurrentWord = currentWord;
         System.out.println(mCurrentWord);
-
     }
 
     private void editNav() {
@@ -98,8 +94,4 @@ public class TranslationPagerActivity extends FragmentActivity {
         }
 
     }
-
-
-
-
 }
