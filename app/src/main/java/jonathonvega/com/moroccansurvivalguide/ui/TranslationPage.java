@@ -1,19 +1,18 @@
 package jonathonvega.com.moroccansurvivalguide.ui;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.app.Activity;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import jonathonvega.com.moroccansurvivalguide.R;
 
 public class TranslationPage extends Fragment {
+    private MediaPlayer player;
 
     private String mEnglishWord;
     private String mArabicWord;
@@ -36,14 +35,74 @@ public class TranslationPage extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View v = inflater.inflate(R.layout.activity_phrase_details, container, false);
+
+        fillOutLabels(v);
+
+        addSound(v);
+
+        return v;
+    }
+
+    private void fillOutLabels(View v) {
         TextView englishLabel = (TextView) v.findViewById(R.id.englishTranslation);
         TextView arabicLabel = (TextView) v.findViewById(R.id.arabicTranslation);
 
         englishLabel.setText(mEnglishWord);
         arabicLabel.setText(mArabicWord);
-
-        return v;
     }
+
+    private void addSound(View vw) {
+        ImageButton soundButton = (ImageButton) vw.findViewById(R.id.soundButton);
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(mArabicWord);
+                String word = formatArabicString(mArabicWord);
+                System.out.println(word);
+                int soundId = getResources().getIdentifier(word, "raw", getActivity().getPackageName());
+
+
+                stopPlaying();
+                player = MediaPlayer.create(getActivity(), soundId);
+                //player.start();
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        stopPlaying();
+                    }
+
+                });
+                player.start();
+            }
+        });
+    }
+
+    // Helper Methods
+
+    private void stopPlaying() {
+        if (player != null) {
+            player.release();
+            player = null;
+        }
+    }
+
+    private String formatArabicString(String word) {
+        String formattedWord = word;
+        formattedWord = formattedWord.toLowerCase();
+        if(Character.isDigit(formattedWord.charAt(0))) {
+            formattedWord = "s" + formattedWord;
+            System.out.println(formattedWord + "1");
+        }
+        formattedWord = formattedWord.replaceAll("\\s+", "_");
+        formattedWord = formattedWord.replaceAll("/","_");
+        formattedWord = formattedWord.replaceAll("'", "");
+        formattedWord = formattedWord.replaceAll("[()]", "");
+        formattedWord = formattedWord.replaceAll("\\.", "");
+        formattedWord = formattedWord.replaceAll("\\?", "");
+
+        System.out.println(formattedWord + "2");
+        return formattedWord;
+    }
+
 }

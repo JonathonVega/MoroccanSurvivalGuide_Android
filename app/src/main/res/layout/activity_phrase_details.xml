@@ -41,8 +41,7 @@
             android:textSize="25sp" />
 
         <ImageButton
-
-            android:id="@+id/imageButton"
+            android:id="@+id/soundButton"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:layout_width="100dp"

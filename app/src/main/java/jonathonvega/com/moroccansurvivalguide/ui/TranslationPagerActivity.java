@@ -32,15 +32,13 @@ public class TranslationPagerActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translation_page);
+        editNav();
         getIntents();
         ViewPager pager = (ViewPager) findViewById(R.id.Pager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapterViewPager);
-
-        getActionBar().setDisplayShowTitleEnabled(false);
-        getActionBar().setDisplayShowHomeEnabled(false);
-
         pager.setCurrentItem(mCurrentWord);
+
 
     }
 
@@ -71,6 +69,11 @@ public class TranslationPagerActivity extends FragmentActivity {
         mCurrentWord = currentWord;
         System.out.println(mCurrentWord);
 
+    }
+
+    private void editNav() {
+        getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setDisplayShowHomeEnabled(false);
     }
 
 

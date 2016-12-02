@@ -22,8 +22,6 @@ public class MainActivity extends ListActivity {
 
         getActionBar().setDisplayShowHomeEnabled(false);
 
-
-
         String[] MSG_Sections = {
                 "Greetings",
                 "Family",
