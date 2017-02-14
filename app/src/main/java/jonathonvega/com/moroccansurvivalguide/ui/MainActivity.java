@@ -33,7 +33,13 @@ public class MainActivity extends ListActivity {
                 "Cities/Sites",
                 "Shopping",
                 "Useful Questions",
-                "Useful Expressions"};
+                "Useful Expressions",
+                "Travel",
+                "Medical",
+                "Party/Festivities",
+                "Weather",
+                "Days of the Week",
+                "Possessions"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 MSG_Sections);

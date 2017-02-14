@@ -8,7 +8,7 @@ public class MSG_Phrases {
     public Section[] phraseList;
 
     public MSG_Phrases(){
-        phraseList = new Section[11];
+        phraseList = new Section[17];
 
         phraseList[0] = new Section("Greetings",
                 new String[][]{
@@ -64,7 +64,9 @@ public class MSG_Phrases {
                         {"Stairs", "Dorjj"},
                         {"Light", "Do2"},
                         {"Outlet", "Preez"},
-                        {"Television", "Talfaza"}});
+                        {"Television", "Talfaza"},
+                        {"Room", "Biit"}
+                });
 
         phraseList[3] = new Section("Street",
                 new String[][]{
@@ -253,9 +255,114 @@ public class MSG_Phrases {
                         {"Girl", "Satta"},
                         {"Friendship", "3achran"},
                         {"Friend", "3achir"},
-                        {"Go", "9alla3"}
-                }
-        );
+                        {"Go", "9alla3"}});
+
+        phraseList[11] = new Section("Travel",
+                new String[][] {
+                        {"Travel", "Safr"},
+                        {"Suitcase", "Baliza"},
+                        {"Bag", "Shanta"},
+                        {"Custom", "Diwane"},
+                        {"Airport", "Matar"},
+                        {"Airplane", "Tyara"},
+                        {"Arrivals", "Wsol"},
+                        {"Departures", "Moghadirat"},
+                        {"Clock", "Sa3a"},
+                        {"Hour", "Sa3a"},
+                        {"Delay", "Ta2jil"},
+                        {"Seat(Airplane)", "Blasa"},
+                        {"Ticket", "Billet"},
+                        {"Reservation", "Reservation"},
+                        {"Passport", "Passeporte"},
+                        {"Far", "B3id"},
+                        {"Close", "9rib"},
+                        {"Toll", "L'khlas"},
+                        {"Gas", "Mazot"},
+                        {"Gas station", "Mahta dl mazot"},
+                        {"Road", "Tri9"}
+                });
+
+        phraseList[12] = new Section("Medical",
+                new String [][] {
+                        {"Hospital", "Sbitar"},
+                        {"Ambulance", "Isa3f"},
+                        {"Medicine", "Dwa"},
+                        {"Doctor", "Tbib"},
+                        {"Hurt", "Drr"},
+                        {"My head hurts", "Drrni rassi"},
+                        {"My feet hurt", "Drroni rjliya"},
+                        {"Prescription", "Wsfa dl dwa"},
+                        {"Dizzy", "Daykh"},
+                        {"Nurse", "Mamarrida"},
+                        {"Heal", "Bra"},
+                        {"Fever", "Homma"},
+                        {"Cold", "Rwa7"},
+                        {"Get better!", "Allah ychafik!"}
+                });
+
+        phraseList[13] = new Section("Party/Festivities",
+                new String[][] {
+                        {"Party", "Hafla"},
+                        {"Bar", "Bar"},
+                        {"Dance", "ShTa7"},
+                        {"To have fun", "Fowwj"},
+                        {"Crew/Group", "7shd"},
+                        {"Hungover(adj)", "Mtammn"},
+                        {"Alchohol", "Shrab"},
+                        {"Stage", "MnSa"}
+                });
+
+        phraseList[14] = new Section("Weather",
+                new String[][] {
+                        {"Clouds", "S7aab"},
+                        {"Weather", "L\'jow"},
+                        {"Hot", "Skhoon"},
+                        {"Cold", "Brd"},
+                        {"Rain", "Shta2"},
+                        {"Snow", "Tlj"},
+                        {"Nice(weatherwise)", "Zwiin"},
+                        {"Sunny", "Kayn l\'chms"},
+                        {"Wind", "Rii7"},
+                        {"Fog", "Dabab"},
+                        {"Thunder", "Ra3d"},
+                        {"Summer", "Sayf"},
+                        {"Winter", "Shta2"},
+                        {"Fall", "L\'kharif"},
+                        {"Spring", "L\'rbii3"},
+                        {"Temperature", "Daraja"}
+                });
+
+        phraseList[15] = new Section("Days of the Week",
+                new String[][] {
+                        {"Days", "Eyamat"},
+                        {"Week", "Semana"},
+                        {"Sunday", "L\'7ad"},
+                        {"Monday", "L\'itniin"},
+                        {"Tuesday", "L\'tlata"},
+                        {"Wednesday", "L\'arab3"},
+                        {"Thursday", "L\'khamiss"},
+                        {"Friday", "Joma3"},
+                        {"Saturday", "Ssbt"},
+                        {"Morning", "Sba7"},
+                        {"Noon", "Zhuhr"},
+                        {"Afternoon/Eve", "L\'a3chiya"},
+                        {"Night", "Lil"},
+                        {"Early", "Bkri"},
+                        {"Late", "Ma3ttl"}
+                });
+
+        phraseList[16] = new Section("Possessions",
+                new String[][] {
+                        {"Of, Possess", "Diel"},
+                        {"Mine", "Dieli"},
+                        {"Yours", "Dielk"},
+                        {"His", "Dielo"},
+                        {"Hers", "Dielha"},
+                        {"You alls", "Dielkoum"},
+                        {"Ours", "Dielna"},
+                        {"Theirs", "Dielhoum"},
+                        {"Of(plural form)", "Dieol"}
+                });
     }
 
     public Section[] getPhraseList() {
