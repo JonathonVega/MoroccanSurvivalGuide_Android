@@ -53,9 +53,6 @@ public class TranslationPagerActivity extends FragmentActivity {
         Section[] sections = phrases.getPhraseList();
         for(int i = 0; i <= 17; i++) {
 
-            // Check what is coming out
-            System.out.println(sections[i].getSection());
-
             if(sections[i].getSection().equals(mSection)) {
                 mSectionWords = sections[i].getWords();
                 break;

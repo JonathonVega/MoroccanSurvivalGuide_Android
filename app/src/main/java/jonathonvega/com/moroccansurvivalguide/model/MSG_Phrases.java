@@ -276,7 +276,7 @@ public class MSG_Phrases {
                         {"Passport", "Passeporte"},
                         {"Far", "B3id"},
                         {"Close", "9rib"},
-                        {"Toll", "L'khlas"},
+                        {"Toll", "L\'khlas"},
                         {"Gas", "Mazot"},
                         {"Gas station", "Mahta dl mazot"},
                         {"Road", "Tri9"}
@@ -369,16 +369,23 @@ public class MSG_Phrases {
         return phraseList;
     }
 
+    public String[] getSectionNames() {
+        String[] sectionNames = new String[getSectionsCount()];
+
+        for(int i = 0; i < phraseList.length; i++) {
+            sectionNames[i] = phraseList[i].getSection();
+        }
+        return sectionNames;
+    }
+
+    public int getSectionsCount() {
+        return phraseList.length;
+    }
+
     public int getPhraseListCount(Section sectionPhraseList) {
         return sectionPhraseList.getWords().length;
     }
 }
-
-
-
-
-
-
 
 
 

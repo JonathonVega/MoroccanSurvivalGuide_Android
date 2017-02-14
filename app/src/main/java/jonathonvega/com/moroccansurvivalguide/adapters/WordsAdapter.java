@@ -16,26 +16,26 @@ import jonathonvega.com.moroccansurvivalguide.model.Section;
  */
 public class WordsAdapter extends BaseAdapter {
 
-    private Context mContext;
-    private MSG_Phrases mAllPhrases;
-    private String mCurrentSection;
-    private String[][] mCurrentWordList;
+    private Context context;
+    private MSG_Phrases allPhrases;
+    private String currentSection;
+    private String[][] currentWordList;
 
     public WordsAdapter(Context context, MSG_Phrases allPhrases, String currentSection) {
-        mContext = context;
-        mAllPhrases = allPhrases;
-        mCurrentSection = currentSection;
+        this.context = context;
+        this.allPhrases = allPhrases;
+        this.currentSection = currentSection;
         getPhraseArray();
     }
 
     @Override
     public int getCount() {
-        return mCurrentWordList.length;
+        return currentWordList.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return mCurrentWordList[position];
+        return currentWordList[position];
     }
 
     @Override
@@ -48,11 +48,10 @@ public class WordsAdapter extends BaseAdapter {
         ViewHolder holder;
 
         if (convertView == null) {
-            // brand new
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.phrase_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.phrase_item, null);
             holder = new ViewHolder();
-            holder.englishTranslation = (TextView) convertView.findViewById(R.id.fdkajl);
-            holder.arabicTranslation = (TextView) convertView.findViewById(R.id.arabicText);
+            holder.englishTranslation = (TextView) convertView.findViewById(R.id.englishText_List);
+            holder.arabicTranslation = (TextView) convertView.findViewById(R.id.arabicText_List);
 
             convertView.setTag(holder);
 
@@ -60,8 +59,8 @@ public class WordsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        String englishWord = mCurrentWordList[position][0];
-        String arabicWord = mCurrentWordList[position][1];
+        String englishWord = currentWordList[position][0];
+        String arabicWord = currentWordList[position][1];
 
         holder.englishTranslation.setText(englishWord);
         holder.arabicTranslation.setText(arabicWord);
@@ -78,9 +77,9 @@ public class WordsAdapter extends BaseAdapter {
 
     private void getPhraseArray() {
         for(int i = 0; i < 17; i++) {
-            Section[] phraseList = mAllPhrases.getPhraseList();
-            if(mCurrentSection.equals(phraseList[i].getSection())){
-                mCurrentWordList = phraseList[i].getWords();
+            Section[] phraseList = allPhrases.getPhraseList();
+            if(currentSection.equals(phraseList[i].getSection())){
+                currentWordList = phraseList[i].getWords();
             }
         }
     }

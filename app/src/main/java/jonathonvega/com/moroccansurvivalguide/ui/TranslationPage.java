@@ -57,9 +57,7 @@ public class TranslationPage extends Fragment {
         soundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(mArabicWord);
                 String word = formatArabicString(mArabicWord);
-                System.out.println(word);
                 int soundId = getResources().getIdentifier(word, "raw", getActivity().getPackageName());
 
                 stopPlaying();
@@ -90,7 +88,6 @@ public class TranslationPage extends Fragment {
         formattedWord = formattedWord.toLowerCase();
         if(Character.isDigit(formattedWord.charAt(0))) {
             formattedWord = "s" + formattedWord;
-            System.out.println(formattedWord + "1");
         }
         formattedWord = formattedWord.replaceAll("\\s+", "_");
         formattedWord = formattedWord.replaceAll("/","_");
@@ -99,7 +96,6 @@ public class TranslationPage extends Fragment {
         formattedWord = formattedWord.replaceAll("\\.", "");
         formattedWord = formattedWord.replaceAll("\\?", "");
 
-        System.out.println(formattedWord + "2");
         return formattedWord;
     }
 }

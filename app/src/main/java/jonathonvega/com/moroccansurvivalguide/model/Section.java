@@ -5,27 +5,19 @@ package jonathonvega.com.moroccansurvivalguide.model;
  */
 public class Section {
 
-    private String mSection;
-    private String[][] mWords;
+    private String section;
+    private String[][] words;
 
     public Section(String section, String[][] words) {
-        mSection = section;
-        mWords = words;
+        this.section = section;
+        this.words = words;
     }
 
     public String getSection() {
-        return mSection;
-    }
-
-    public void setSection(String section) {
-        mSection = section;
+        return section;
     }
 
     public String[][] getWords() {
-        return mWords;
-    }
-
-    public void setWords(String[][] words) {
-        mWords = words;
+        return words;
     }
 }

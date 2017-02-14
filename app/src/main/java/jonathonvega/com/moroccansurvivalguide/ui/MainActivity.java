@@ -9,11 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import jonathonvega.com.moroccansurvivalguide.R;
+import jonathonvega.com.moroccansurvivalguide.model.MSG_Phrases;
 
 
 public class MainActivity extends ListActivity {
-
-
+    MSG_Phrases dictionary = new MSG_Phrases();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +22,10 @@ public class MainActivity extends ListActivity {
 
         getActionBar().setDisplayShowHomeEnabled(false);
 
-        String[] MSG_Sections = {
-                "Greetings",
-                "Family",
-                "House",
-                "Street",
-                "Food",
-                "Numbers",
-                "Money",
-                "Cities/Sites",
-                "Shopping",
-                "Useful Questions",
-                "Useful Expressions",
-                "Travel",
-                "Medical",
-                "Party/Festivities",
-                "Weather",
-                "Days of the Week",
-                "Possessions"};
+        String[] dictionarySections = dictionary.getSectionNames();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
-                MSG_Sections);
+                dictionarySections);
         setListAdapter(adapter);
     }
 
@@ -51,9 +34,6 @@ public class MainActivity extends ListActivity {
         super.onListItemClick(l, v, position, id);
 
         String sectionClickedFromList = l.getItemAtPosition(position).toString();
-
-        Log.d("WORKING",sectionClickedFromList);
-        System.out.println(sectionClickedFromList);
 
         Intent intent = new Intent(this, WordListActivity.class);
         intent.putExtra("curSection", sectionClickedFromList);
