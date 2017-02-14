@@ -77,7 +77,7 @@ public class WordsAdapter extends BaseAdapter {
 
 
     private void getPhraseArray() {
-        for(int i = 0; i < 11; i++) {
+        for(int i = 0; i < 17; i++) {
             Section[] phraseList = mAllPhrases.getPhraseList();
             if(mCurrentSection.equals(phraseList[i].getSection())){
                 mCurrentWordList = phraseList[i].getWords();

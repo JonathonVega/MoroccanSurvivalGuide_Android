@@ -51,7 +51,7 @@ public class TranslationPagerActivity extends FragmentActivity {
 
         MSG_Phrases phrases = new MSG_Phrases();
         Section[] sections = phrases.getPhraseList();
-        for(int i = 0; i <= 11; i++) {
+        for(int i = 0; i <= 17; i++) {
 
             // Check what is coming out
             System.out.println(sections[i].getSection());
