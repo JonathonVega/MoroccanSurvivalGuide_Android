@@ -59,6 +59,9 @@ public class TranslationPage extends Fragment {
             public void onClick(View v) {
                 String word = formatArabicString(mArabicWord);
                 int soundId = getResources().getIdentifier(word, "raw", getActivity().getPackageName());
+                if (soundId == 0) {
+                    soundId = getResources().getIdentifier("silence", "raw", getActivity().getPackageName());
+                }
 
                 stopPlaying();
                 player = MediaPlayer.create(getActivity(), soundId);
@@ -95,6 +98,7 @@ public class TranslationPage extends Fragment {
         formattedWord = formattedWord.replaceAll("[()]", "");
         formattedWord = formattedWord.replaceAll("\\.", "");
         formattedWord = formattedWord.replaceAll("\\?", "");
+        formattedWord = formattedWord.replaceAll("!", "");
 
         return formattedWord;
     }

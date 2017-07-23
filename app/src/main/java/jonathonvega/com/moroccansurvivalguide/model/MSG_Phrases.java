@@ -291,9 +291,8 @@ public class MSG_Phrases {
                         {"Hurt", "Drr"},
                         {"My head hurts", "Drrni rassi"},
                         {"My feet hurt", "Drroni rjliya"},
-                        {"Prescription", "Wsfa dl dwa"},
+                        {"Prescription", "Wasfa dl dwa"},
                         {"Dizzy", "Daykh"},
-                        {"Nurse", "Mamarrida"},
                         {"Heal", "Bra"},
                         {"Fever", "Homma"},
                         {"Cold", "Rwa7"},
@@ -340,7 +339,7 @@ public class MSG_Phrases {
                         {"Monday", "L\'itniin"},
                         {"Tuesday", "L\'tlata"},
                         {"Wednesday", "L\'arab3"},
-                        {"Thursday", "L\'khamiss"},
+                        {"Thursday", "L\'khamiis"},
                         {"Friday", "Joma3"},
                         {"Saturday", "Ssbt"},
                         {"Morning", "Sba7"},
@@ -360,7 +359,7 @@ public class MSG_Phrases {
                         {"Hers", "Dielha"},
                         {"You alls", "Dielkoum"},
                         {"Ours", "Dielna"},
-                        {"Theirs", "Dielhoum"},
+                        {"Theirs", "Dielhom"},
                         {"Of(plural form)", "Dieol"}
                 });
     }
